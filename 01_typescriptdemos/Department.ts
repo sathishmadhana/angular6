@@ -7,7 +7,7 @@ class Department {
     }
 }
 
-var a = new Employee();
+var a = new Employee(10);
 var b = new Department();
 b.addEmployee(a);
 console.log("Employee added");
