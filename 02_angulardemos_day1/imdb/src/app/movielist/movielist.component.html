@@ -1,6 +1,11 @@
 <div class="col-md-4">
   <div class="panel panel-primary">
-    <div class="panel-heading">MovieList</div>
+    <div class="panel-heading">MovieList 
+      <span *ngIf="loading" class="pull-right">
+        <!--<button class="btn btn-danger">Loading</button>-->
+        <img src="/assets/status.gif" width="70" height="30">
+      </span>
+    </div>
     <div class="panel-body">
 
       <table class="table table-striped table-bordered">

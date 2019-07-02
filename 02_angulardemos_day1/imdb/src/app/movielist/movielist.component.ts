@@ -10,12 +10,15 @@ import { MovielistService } from '../movielist.service';
 export class MovielistComponent implements OnInit {
 
   movies;
+  loading = false;
 
   constructor(public service: MovielistService) { }
 
-  ngOnInit() {  // Will get called as soon as the UI is loaded        
+  ngOnInit() {  // Will get called as soon as the UI is loaded     
+    this.loading = true;
     this.service.getMovieList().subscribe(result => {
-      this.movies = result
+      this.movies = result;
+      this.loading = false;
     });
   }
 
