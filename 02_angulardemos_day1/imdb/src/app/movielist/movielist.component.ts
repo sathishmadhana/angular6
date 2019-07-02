@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovielistService } from '../movielist.service';
+import { PubSubService } from '../pubsub.service';
 
 @Component({
   selector: 'app-movielist',
@@ -12,7 +13,7 @@ export class MovielistComponent implements OnInit {
   movies;
   loading = false;
 
-  constructor(public service: MovielistService) { }
+  constructor(public service: MovielistService, public pubsubservice: PubSubService) { }
 
   ngOnInit() {  // Will get called as soon as the UI is loaded     
     this.loading = true;
@@ -22,9 +23,8 @@ export class MovielistComponent implements OnInit {
     });
   }
 
-  handleClick(evt) {
-    console.log("I am clicked");
-    console.log(evt.target.innerHTML);
+  handleClick(evt) {    
+    this.pubsubservice.getPublisher().next(evt.target.innerHTML);
   }
 
 }

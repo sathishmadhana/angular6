@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PubSubService } from '../pubsub.service';
 
 @Component({
   selector: 'app-moviedetail',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviedetailComponent implements OnInit {
 
-  constructor() { }
+  movieDetails;
+  constructor(private pubsubservice :PubSubService) { }
 
   ngOnInit() {
+    this.pubsubservice.getSubscriber().subscribe( result => {
+      this.movieDetails = result;
+    })
   }
 
 }
