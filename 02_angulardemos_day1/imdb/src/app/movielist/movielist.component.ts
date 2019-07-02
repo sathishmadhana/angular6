@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-movielist',
@@ -7,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovielistComponent implements OnInit {
 
-  movies = [
-    {name : "Harry Potter", writer: 'J.K. Rowling', genre: 'Thriller', year: 2012 },
-    {name : "James Bond", writer: 'Ian Fleming', genre: 'Action', year: 1998 },
-    {name : "Sherlock Holmes", writer: 'Arthur Conan Doyle', genre: 'Suspense', year: 1880 },
-  ];
+  movies;
 
-  constructor() { }
+  constructor(public httpClient: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit() {  // Will get called as soon as the UI is loaded
+    this.httpClient.get("http://www.mocky.io/v2/5d1b11233400004c000004ae?mocky-delay=3000ms")
+    .subscribe(
+      result => this.movies = result
+    );
   }
 
   handleClick(evt) {
