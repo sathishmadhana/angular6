@@ -11,7 +11,15 @@ import { PubSubService } from '../pubsub.service';
 export class MovielistComponent implements OnInit {
 
   movies;
-  loading = false;
+  loading = false;  
+
+  moviedetails = [	  
+    {
+      name : "Harry Potter", 
+      summary: 'Harry Potter is a British-American film series based on the eponymous novels by author J. K. Rowling. The series is distributed by Warner Bros. and consists of eight fantasy films', 
+      banner: 'http://t0.gstatic.com/images?q=tbn:ANd9GcT_9nrOnN8sYfZZHJ06EIBSoEO5qjx7uHHEs6VtKNplGVuGhZuC'
+    }
+  ];
 
   constructor(public service: MovielistService, public pubsubservice: PubSubService) { }
 
@@ -24,7 +32,11 @@ export class MovielistComponent implements OnInit {
   }
 
   handleClick(evt) {    
-    this.pubsubservice.getPublisher().next(evt.target.innerHTML);
+    
+    //var movieName = evt.target.innerHTML;
+    //var movieDetail = this.moviedetails.filter(result => result.name === movieName);
+    this.pubsubservice.getPublisher().next(this.moviedetails[0]);
+    
   }
 
 }

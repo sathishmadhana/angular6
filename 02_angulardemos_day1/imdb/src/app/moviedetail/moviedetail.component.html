@@ -1,7 +1,16 @@
 <div class="col-md-6">
   <div class="panel panel-primary">
     <div class="panel-heading">MovieDetails</div>
-    <div class="panel-body">{{movieDetails}}</div>
+
+    <div class="panel-body">
+      <span *ngIf="movieDetails">
+        <div class="alert alert-success"><h4>{{movieDetails.name}}</h4></div>
+        <div class="conainer col-sm-8">{{movieDetails.summary}}</div>
+        <div class="conainer col-sm-4">
+          <img width="100%" height="100%" src="{{movieDetails.banner}}">
+        </div>        
+      </span>     
+    </div>
     <div class="panel-footer">Content Subject to Copyright</div>
   </div>
 </div>
