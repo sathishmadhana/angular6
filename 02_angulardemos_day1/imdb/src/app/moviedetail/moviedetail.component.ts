@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PubSubService } from '../pubsub.service';
+import { MoviedetailsService } from '../moviedetails.service';
 
 @Component({
   selector: 'app-moviedetail',
@@ -9,11 +10,13 @@ import { PubSubService } from '../pubsub.service';
 export class MoviedetailComponent implements OnInit {
 
   movieDetails;
-  constructor(private pubsubservice :PubSubService) { }
+  constructor(private pubsubservice :PubSubService, private moveDetailService: MoviedetailsService) { }
 
   ngOnInit() {
-    this.pubsubservice.getSubscriber().subscribe( result => {
-      this.movieDetails = result;
+    this.pubsubservice.getSubscriber().subscribe((movieName) => {
+      this.moveDetailService.getMovie(movieName).subscribe(result => {
+        this.movieDetails = result;
+      })      
     })
   }
 
