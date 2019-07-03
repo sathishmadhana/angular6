@@ -17,6 +17,8 @@ import { Oops404pageComponent } from './oops404page/oops404page.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { SignuppageComponent } from './signuppage/signuppage.component';
 import { routes } from './router';
+import { SelectionhighlighterDirective } from './selectionhighlighter.directive';
+import { CurrencyconvertorPipe } from './currencyconvertor.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { routes } from './router';
     EventspageComponent,
     Oops404pageComponent,
     LoginpageComponent,
-    SignuppageComponent
+    SignuppageComponent,
+    SelectionhighlighterDirective,
+    CurrencyconvertorPipe
   ],
   imports: [
     BrowserModule,
