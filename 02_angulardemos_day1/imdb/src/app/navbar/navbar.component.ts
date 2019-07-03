@@ -23,4 +23,11 @@ export class NavbarComponent implements OnInit {
     })
   }  
 
+  handleLogout() {
+    sessionStorage.removeItem("loggedin");
+    this.pubsub.getLoginPublisher().next("loggedout");
+    this.loggedIn = false;
+    this.router.navigate(['']);
+  }
+
 }

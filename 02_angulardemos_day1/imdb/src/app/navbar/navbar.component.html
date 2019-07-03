@@ -20,7 +20,7 @@
         
         <li *ngIf="!loggedIn"><a [routerLink]="['/login']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 
-        <li *ngIf="loggedIn"><a [routerLink]="['/login']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li *ngIf="loggedIn" class="cursor-pointer"><a (click)="handleLogout()" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
