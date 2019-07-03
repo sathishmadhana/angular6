@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PubSubService } from '../pubsub.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  websitename = "Siemens"
+  websitename = "SMDb";
+  loggedIn = false;
   
-  constructor() { }
+  constructor(private pubsub: PubSubService, private router: Router) { }
 
   ngOnInit() {
-  }
+    this.pubsub.getLoginSubscriber().subscribe(loginResult => {
+      console.log(loginResult);
+      if(sessionStorage.getItem("loggedin") != null) {
+        this.loggedIn = true;
+      }
+    })
+  }  
 
 }

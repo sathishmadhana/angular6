@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,6 +14,8 @@ import { MoviespageComponent } from './moviespage/moviespage.component';
 import { TelevisionpageComponent } from './televisionpage/televisionpage.component';
 import { EventspageComponent } from './eventspage/eventspage.component';
 import { Oops404pageComponent } from './oops404page/oops404page.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { SignuppageComponent } from './signuppage/signuppage.component';
 
 //TODO: move this to a seperate file
 const routes = [
@@ -20,6 +23,8 @@ const routes = [
   { path: 'movies', component: MoviespageComponent },
   { path: 'television', component: TelevisionpageComponent },
   { path: 'events', component: EventspageComponent },
+  { path: 'login', component: LoginpageComponent },
+  { path: 'signup', component: SignuppageComponent },
   { path: '**', component: Oops404pageComponent }
 ]
 
@@ -35,11 +40,14 @@ const routes = [
     MoviespageComponent,
     TelevisionpageComponent,
     EventspageComponent,
-    Oops404pageComponent
+    Oops404pageComponent,
+    LoginpageComponent,
+    SignuppageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
