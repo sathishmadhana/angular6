@@ -16,17 +16,7 @@ import { EventspageComponent } from './eventspage/eventspage.component';
 import { Oops404pageComponent } from './oops404page/oops404page.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { SignuppageComponent } from './signuppage/signuppage.component';
-
-//TODO: move this to a seperate file
-const routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'movies', component: MoviespageComponent },
-  { path: 'television', component: TelevisionpageComponent },
-  { path: 'events', component: EventspageComponent },
-  { path: 'login', component: LoginpageComponent },
-  { path: 'signup', component: SignuppageComponent },
-  { path: '**', component: Oops404pageComponent }
-]
+import { routes } from './router';
 
 @NgModule({
   declarations: [
