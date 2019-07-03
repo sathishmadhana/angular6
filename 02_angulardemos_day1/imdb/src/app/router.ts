@@ -6,9 +6,9 @@ import { EventspageComponent } from "./eventspage/eventspage.component";
 import { SignuppageComponent } from "./signuppage/signuppage.component";
 import { Oops404pageComponent } from "./oops404page/oops404page.component";
 import { LoginpageComponent } from "./loginpage/loginpage.component";
+import { Routes } from "@angular/router"
 
-
-export const routes = [
+export const routes: Routes = [
     { path: '', component: HomepageComponent },
     { path: 'movies', component: MoviespageComponent, canActivate:[AuthfilterGuard] },
     { path: 'television', component: TelevisionpageComponent },
