@@ -10,10 +10,10 @@ import { Routes } from "@angular/router"
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent },
-    { path: 'movies', component: MoviespageComponent, canActivate:[AuthfilterGuard] },
-    { path: 'television', component: TelevisionpageComponent },
-    { path: 'events', component: EventspageComponent },
     { path: 'login', component: LoginpageComponent },
-    { path: 'signup', component: SignuppageComponent },
-    { path: '**', component: Oops404pageComponent }
+    { path: 'movies', component: MoviespageComponent, canActivate:[AuthfilterGuard] },
+    { path: 'television', component: TelevisionpageComponent, canActivate:[AuthfilterGuard] },
+    { path: 'events', component: EventspageComponent, canActivate:[AuthfilterGuard] },    
+    { path: 'signup', component: SignuppageComponent, canActivate:[AuthfilterGuard] },
+    { path: '**', component: Oops404pageComponent, canActivate:[AuthfilterGuard] }
   ]
