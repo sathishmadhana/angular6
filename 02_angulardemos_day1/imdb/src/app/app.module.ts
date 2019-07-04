@@ -19,6 +19,7 @@ import { SignuppageComponent } from './signuppage/signuppage.component';
 import { routes } from './router';
 import { SelectionhighlighterDirective } from './selectionhighlighter.directive';
 import { CurrencyconvertorPipe } from './currencyconvertor.pipe';
+import { CrmModule } from './crm/crm.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CurrencyconvertorPipe } from './currencyconvertor.pipe';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    CrmModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
