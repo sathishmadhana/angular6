@@ -1,1 +1,1 @@
-# angular6training
+# Sample Angular 6 application
